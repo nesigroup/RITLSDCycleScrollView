@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343D96231AE48E416DE7C130 /* libPods-RITLSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 231C62AEDCAE4E108890B7DC /* libPods-RITLSDCycleScrollView.a */; };
 		DBD8F8F7200CEDBE00F33364 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */; };
 		DBD8F8FA200CEDBE00F33364 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F8F9200CEDBE00F33364 /* ViewController.m */; };
 		DBD8F8FD200CEDBE00F33364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD8F8FB200CEDBE00F33364 /* Main.storyboard */; };
 		DBD8F8FF200CEDBE00F33364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD8F8FE200CEDBE00F33364 /* Assets.xcassets */; };
 		DBD8F902200CEDBE00F33364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD8F900200CEDBE00F33364 /* LaunchScreen.storyboard */; };
 		DBD8F905200CEDBE00F33364 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F904200CEDBE00F33364 /* main.m */; };
+		DBD8F922200CEED700F33364 /* RITLSDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */; };
+		DBD8F923200CEED700F33364 /* RITLShakePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */; };
+		DBD8F924200CEED700F33364 /* RITLShakeCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		231C62AEDCAE4E108890B7DC /* libPods-RITLSDCycleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RITLSDCycleScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3CB480CFD3F60A01D0FC88 /* Pods-RITLSDCycleScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RITLSDCycleScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView.release.xcconfig"; sourceTree = "<group>"; };
+		B5ACA32CFFB9E8D12743C53E /* Pods-RITLSDCycleScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RITLSDCycleScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView.debug.xcconfig"; sourceTree = "<group>"; };
 		DBD8F8F2200CEDBE00F33364 /* RITLSDCycleScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RITLSDCycleScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8F8F5200CEDBE00F33364 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +33,13 @@
 		DBD8F901200CEDBE00F33364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBD8F903200CEDBE00F33364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD8F904200CEDBE00F33364 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DBD8F919200CEED700F33364 /* RITLSDCyclePubilcItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLSDCyclePubilcItem.h; sourceTree = "<group>"; };
+		DBD8F91A200CEED700F33364 /* RITLSDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLSDCycleScrollView.h; sourceTree = "<group>"; };
+		DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLSDCycleScrollView.m; sourceTree = "<group>"; };
+		DBD8F91E200CEED700F33364 /* RITLShakePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakePageControl.h; sourceTree = "<group>"; };
+		DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakePageControl.m; sourceTree = "<group>"; };
+		DBD8F920200CEED700F33364 /* RITLShakeCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakeCycleScrollView.h; sourceTree = "<group>"; };
+		DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakeCycleScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343D96231AE48E416DE7C130 /* libPods-RITLSDCycleScrollView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E13398971A200BC487883FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5ACA32CFFB9E8D12743C53E /* Pods-RITLSDCycleScrollView.debug.xcconfig */,
+				4F3CB480CFD3F60A01D0FC88 /* Pods-RITLSDCycleScrollView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1BB446DCDA072FD9A23285A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				231C62AEDCAE4E108890B7DC /* libPods-RITLSDCycleScrollView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DBD8F8E9200CEDBE00F33364 = {
 			isa = PBXGroup;
 			children = (
 				DBD8F8F4200CEDBE00F33364 /* RITLSDCycleScrollView */,
 				DBD8F8F3200CEDBE00F33364 /* Products */,
+				0E13398971A200BC487883FB /* Pods */,
+				1BB446DCDA072FD9A23285A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +92,7 @@
 		DBD8F8F4200CEDBE00F33364 /* RITLSDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				DBD8F918200CEED700F33364 /* RITLSDCycleView */,
 				DBD8F8F5200CEDBE00F33364 /* AppDelegate.h */,
 				DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */,
 				DBD8F8F8200CEDBE00F33364 /* ViewController.h */,
@@ -71,6 +106,36 @@
 			path = RITLSDCycleScrollView;
 			sourceTree = "<group>";
 		};
+		DBD8F918200CEED700F33364 /* RITLSDCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				DBD8F919200CEED700F33364 /* RITLSDCyclePubilcItem.h */,
+				DBD8F91A200CEED700F33364 /* RITLSDCycleScrollView.h */,
+				DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */,
+				DBD8F91C200CEED700F33364 /* ShakeCycleScrollView */,
+			);
+			path = RITLSDCycleView;
+			sourceTree = SOURCE_ROOT;
+		};
+		DBD8F91C200CEED700F33364 /* ShakeCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DBD8F91D200CEED700F33364 /* PageControl */,
+				DBD8F920200CEED700F33364 /* RITLShakeCycleScrollView.h */,
+				DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */,
+			);
+			path = ShakeCycleScrollView;
+			sourceTree = "<group>";
+		};
+		DBD8F91D200CEED700F33364 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				DBD8F91E200CEED700F33364 /* RITLShakePageControl.h */,
+				DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBD8F908200CEDBE00F33364 /* Build configuration list for PBXNativeTarget "RITLSDCycleScrollView" */;
 			buildPhases = (
+				47499F15B2C1D82084173DCE /* [CP] Check Pods Manifest.lock */,
 				DBD8F8EE200CEDBE00F33364 /* Sources */,
 				DBD8F8EF200CEDBE00F33364 /* Frameworks */,
 				DBD8F8F0200CEDBE00F33364 /* Resources */,
+				D601EA000EA07E072E5E3D43 /* [CP] Embed Pods Frameworks */,
+				867297CEAA7867711CB69968 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +205,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47499F15B2C1D82084173DCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RITLSDCycleScrollView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		867297CEAA7867711CB69968 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D601EA000EA07E072E5E3D43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DBD8F8EE200CEDBE00F33364 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +263,9 @@
 			files = (
 				DBD8F8FA200CEDBE00F33364 /* ViewController.m in Sources */,
 				DBD8F905200CEDBE00F33364 /* main.m in Sources */,
+				DBD8F924200CEED700F33364 /* RITLShakeCycleScrollView.m in Sources */,
+				DBD8F922200CEED700F33364 /* RITLSDCycleScrollView.m in Sources */,
+				DBD8F923200CEED700F33364 /* RITLShakePageControl.m in Sources */,
 				DBD8F8F7200CEDBE00F33364 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +398,7 @@
 		};
 		DBD8F909200CEDBE00F33364 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5ACA32CFFB9E8D12743C53E /* Pods-RITLSDCycleScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +413,7 @@
 		};
 		DBD8F90A200CEDBE00F33364 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3CB480CFD3F60A01D0FC88 /* Pods-RITLSDCycleScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
