@@ -1,4 +1,58 @@
 PODS:
+  - Masonry (1.1.0)
+  - RITLKit (0.3.9):
+    - Masonry
+    - RITLKit/Category (= 0.3.9)
+    - RITLKit/ImagePicker (= 0.3.9)
+    - RITLKit/ScrollPageController (= 0.3.9)
+    - RITLKit/Utility (= 0.3.9)
+    - RITLKit/View (= 0.3.9)
+    - RITLKit/Web (= 0.3.9)
+    - RITLViewFrame
+  - RITLKit/Category (0.3.9):
+    - Masonry
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLKit/ImagePicker (0.3.9):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/ScrollPageController (0.3.9):
+    - Masonry
+    - RITLKit/Category
+    - RITLKit/ScrollPageController/LLSegmentBar (= 0.3.9)
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLKit/ScrollPageController/LLSegmentBar (0.3.9):
+    - Masonry
+    - RITLKit/Category
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLKit/Utility (0.3.9):
+    - Masonry
+    - RITLKit/Utility/DownLoader (= 0.3.9)
+    - RITLKit/Utility/Filter (= 0.3.9)
+    - RITLKit/Utility/Reachability (= 0.3.9)
+    - RITLViewFrame
+  - RITLKit/Utility/DownLoader (0.3.9):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/Utility/Filter (0.3.9):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/Utility/Reachability (0.3.9):
+    - Masonry
+    - RITLViewFrame
+  - RITLKit/View (0.3.9):
+    - Masonry
+    - RITLKit/Category
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLKit/Web (0.3.9):
+    - Masonry
+    - RITLKit/Category
+    - RITLKit/Utility
+    - RITLViewFrame
+  - RITLViewFrame (0.0.1)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.2.3):
@@ -6,12 +60,24 @@ PODS:
   - SDWebImage/Core (4.2.3)
 
 DEPENDENCIES:
+  - RITLKit (~> 0.3.9)
   - SDCycleScrollView
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - RITLKit
+    - RITLViewFrame
+    - SDCycleScrollView
+    - SDWebImage
+
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  RITLKit: 77dde4c873710681d61df87af616339bb2f37019
+  RITLViewFrame: 4e38e6333e6b4691c1980c3fcda9ff4d08f0d2c8
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: ee9521eeb5a5d99d454d8d743030fef6572d9b93
+PODFILE CHECKSUM: 7b1aaba4d6c0691aee1c55afc7a4205787dc7b97
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2

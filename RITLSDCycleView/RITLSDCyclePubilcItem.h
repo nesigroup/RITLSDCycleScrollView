@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UICollectionView *mainView;
 @property (nonatomic, strong) UIView *pageControl;
 @property (nonatomic, strong) UIImage *placeholderImage;
-@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) UICollectionViewLayout *flowLayout;
 
 @end
 
