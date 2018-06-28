@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 履行<RITLSDCycleScrollViewCell>的类
  */
-- (Class <RITLSDCycleScrollViewCell>)customCollectionViewCellClassForCycleScrollView __deprecated_msg("Use cycleViewCustomCollectionViewCellClass: instead.");
+- (Class <RITLSDCycleScrollViewCell>)customCollectionViewCellClassForCycleScrollView;
 
 
 /**
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 自定义的UICollectionViewLayout对象
  */
-- (UICollectionViewLayout *)customCollectionViewLayoutForCycleScollView __deprecated_msg("Use cycleScollViewcustomCollectionViewLayout: instead.");
+- (UICollectionViewLayout *)customCollectionViewLayoutForCycleScollView;
 
 
 /**
