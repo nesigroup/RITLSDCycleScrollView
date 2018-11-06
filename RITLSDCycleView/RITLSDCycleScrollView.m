@@ -71,10 +71,10 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
             
             class = [self.dataSource cycleViewCustomCollectionViewCellClass:self];
             
-        }else {
+        }/*else {
             
             class = [self.dataSource customCollectionViewCellClassForCycleScrollView];
-        }
+        }*/
         
         [self.mainView registerClass:class forCellWithReuseIdentifier:NSStringFromClass(class)];
     }
