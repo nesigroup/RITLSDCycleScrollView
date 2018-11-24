@@ -63,9 +63,20 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
         if (@available(iOS 11.0, *)) {
             self.mainView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
+
+        Class class;
         
         // 注册cell
-        [self.mainView registerClass:[self.dataSource cycleViewCustomCollectionViewCellClass:self] forCellWithReuseIdentifier:NSStringFromClass([self.dataSource cycleViewCustomCollectionViewCellClass:self])];
+        if ([self.dataSource respondsToSelector:@selector(cycleViewCustomCollectionViewCellClass:)]) {
+            
+            class = [self.dataSource cycleViewCustomCollectionViewCellClass:self];
+            
+        }/*else {
+            
+            class = [self.dataSource customCollectionViewCellClassForCycleScrollView];
+        }*/
+        
+        [self.mainView registerClass:class forCellWithReuseIdentifier:NSStringFromClass(class)];
     }
     
     if ([dataSource respondsToSelector:@selector(cycleScollViewcustomCollectionViewLayout:)]) {

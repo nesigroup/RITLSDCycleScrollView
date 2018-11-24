@@ -26,17 +26,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol RITLSDCycleScrollViewDataSource <NSObject>
 
-
-/**
- 自定义的collectionView类
- 作为cell的类必须履行<RITLSDCycleScrollViewCell>
- 
- 即将废弃，建议使用cycleViewCustomCollectionViewCellClass:
- 
- @return 履行<RITLSDCycleScrollViewCell>的类
- */
-- (Class <RITLSDCycleScrollViewCell>)customCollectionViewCellClassForCycleScrollView __deprecated_msg("Use cycleViewCustomCollectionViewCellClass: instead.");
-
+//
+///**
+// 自定义的collectionView类
+// 作为cell的类必须履行<RITLSDCycleScrollViewCell>
+//
+// 即将废弃，建议使用cycleViewCustomCollectionViewCellClass:
+//
+// @return 履行<RITLSDCycleScrollViewCell>的类
+// */
+//- (Class <RITLSDCycleScrollViewCell>)customCollectionViewCellClassForCycleScrollView;
+//
 
 /**
  自定义的collectionView类
@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param cycleView 执行回调的轮播视图
  @return 履行<RITLSDCycleScrollViewCell>的类
  */
-- (Class <RITLSDCycleScrollViewCell>)cycleViewCustomCollectionViewCellClass:(RITLSDCycleScrollView *)cycleView;
+- (Class)cycleViewCustomCollectionViewCellClass:(RITLSDCycleScrollView *)cycleView;
 
 
 @optional
@@ -61,14 +61,14 @@ NS_ASSUME_NONNULL_BEGIN
   setupCustomCell:(UICollectionViewCell<RITLSDCycleScrollViewCell>*)cell
          forIndex:(NSIndexPath *)indexPath;
 
-/**
- 自定义的collectionViewLayout对象
- 
- 即将废弃，建议使用cycleScollViewcustomCollectionViewLayout:
-
- @return 自定义的UICollectionViewLayout对象
- */
-- (UICollectionViewLayout *)customCollectionViewLayoutForCycleScollView __deprecated_msg("Use cycleScollViewcustomCollectionViewLayout: instead.");
+///**
+// 自定义的collectionViewLayout对象
+// 
+// 即将废弃，建议使用cycleScollViewcustomCollectionViewLayout:
+//
+// @return 自定义的UICollectionViewLayout对象
+// */
+//- (UICollectionViewLayout *)customCollectionViewLayoutForCycleScollView;
 
 
 /**

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		343D96231AE48E416DE7C130 /* libPods-RITLSDCycleScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 231C62AEDCAE4E108890B7DC /* libPods-RITLSDCycleScrollView.a */; };
+		DBCBB909219164C70093CCDB /* RITLSDCycleScrollViewActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBB908219164C70093CCDB /* RITLSDCycleScrollViewActionManager.swift */; };
+		DBCBB914219167340093CCDB /* RITLShakeCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCBB910219167340093CCDB /* RITLShakeCycleScrollView.m */; };
+		DBCBB915219167340093CCDB /* RITLShakePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCBB912219167340093CCDB /* RITLShakePageControl.m */; };
 		DBD8F8F7200CEDBE00F33364 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */; };
 		DBD8F8FA200CEDBE00F33364 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F8F9200CEDBE00F33364 /* ViewController.m */; };
 		DBD8F8FD200CEDBE00F33364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD8F8FB200CEDBE00F33364 /* Main.storyboard */; };
@@ -15,14 +18,18 @@
 		DBD8F902200CEDBE00F33364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD8F900200CEDBE00F33364 /* LaunchScreen.storyboard */; };
 		DBD8F905200CEDBE00F33364 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F904200CEDBE00F33364 /* main.m */; };
 		DBD8F922200CEED700F33364 /* RITLSDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */; };
-		DBD8F923200CEED700F33364 /* RITLShakePageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */; };
-		DBD8F924200CEED700F33364 /* RITLShakeCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		231C62AEDCAE4E108890B7DC /* libPods-RITLSDCycleScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RITLSDCycleScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CB480CFD3F60A01D0FC88 /* Pods-RITLSDCycleScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RITLSDCycleScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView.release.xcconfig"; sourceTree = "<group>"; };
 		B5ACA32CFFB9E8D12743C53E /* Pods-RITLSDCycleScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RITLSDCycleScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RITLSDCycleScrollView/Pods-RITLSDCycleScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		DBCBB908219164C70093CCDB /* RITLSDCycleScrollViewActionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RITLSDCycleScrollViewActionManager.swift; sourceTree = "<group>"; };
+		DBCBB90A219165490093CCDB /* RITLSDCycleScrollView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RITLSDCycleScrollView-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBCBB90F219167340093CCDB /* RITLShakeCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakeCycleScrollView.h; sourceTree = "<group>"; };
+		DBCBB910219167340093CCDB /* RITLShakeCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakeCycleScrollView.m; sourceTree = "<group>"; };
+		DBCBB912219167340093CCDB /* RITLShakePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakePageControl.m; sourceTree = "<group>"; };
+		DBCBB913219167340093CCDB /* RITLShakePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakePageControl.h; sourceTree = "<group>"; };
 		DBD8F8F2200CEDBE00F33364 /* RITLSDCycleScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RITLSDCycleScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD8F8F5200CEDBE00F33364 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,10 +43,6 @@
 		DBD8F919200CEED700F33364 /* RITLSDCyclePubilcItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLSDCyclePubilcItem.h; sourceTree = "<group>"; };
 		DBD8F91A200CEED700F33364 /* RITLSDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLSDCycleScrollView.h; sourceTree = "<group>"; };
 		DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLSDCycleScrollView.m; sourceTree = "<group>"; };
-		DBD8F91E200CEED700F33364 /* RITLShakePageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakePageControl.h; sourceTree = "<group>"; };
-		DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakePageControl.m; sourceTree = "<group>"; };
-		DBD8F920200CEED700F33364 /* RITLShakeCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITLShakeCycleScrollView.h; sourceTree = "<group>"; };
-		DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RITLShakeCycleScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBCBB90E219167340093CCDB /* ShakeCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBB90F219167340093CCDB /* RITLShakeCycleScrollView.h */,
+				DBCBB910219167340093CCDB /* RITLShakeCycleScrollView.m */,
+				DBCBB911219167340093CCDB /* PageControl */,
+			);
+			path = ShakeCycleScrollView;
+			sourceTree = SOURCE_ROOT;
+		};
+		DBCBB911219167340093CCDB /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				DBCBB912219167340093CCDB /* RITLShakePageControl.m */,
+				DBCBB913219167340093CCDB /* RITLShakePageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
 		DBD8F8E9200CEDBE00F33364 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +114,7 @@
 		DBD8F8F4200CEDBE00F33364 /* RITLSDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				DBCBB90E219167340093CCDB /* ShakeCycleScrollView */,
 				DBD8F918200CEED700F33364 /* RITLSDCycleView */,
 				DBD8F8F5200CEDBE00F33364 /* AppDelegate.h */,
 				DBD8F8F6200CEDBE00F33364 /* AppDelegate.m */,
@@ -112,29 +135,11 @@
 				DBD8F919200CEED700F33364 /* RITLSDCyclePubilcItem.h */,
 				DBD8F91A200CEED700F33364 /* RITLSDCycleScrollView.h */,
 				DBD8F91B200CEED700F33364 /* RITLSDCycleScrollView.m */,
-				DBD8F91C200CEED700F33364 /* ShakeCycleScrollView */,
+				DBCBB908219164C70093CCDB /* RITLSDCycleScrollViewActionManager.swift */,
+				DBCBB90A219165490093CCDB /* RITLSDCycleScrollView-Bridging-Header.h */,
 			);
 			path = RITLSDCycleView;
 			sourceTree = SOURCE_ROOT;
-		};
-		DBD8F91C200CEED700F33364 /* ShakeCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				DBD8F91D200CEED700F33364 /* PageControl */,
-				DBD8F920200CEED700F33364 /* RITLShakeCycleScrollView.h */,
-				DBD8F921200CEED700F33364 /* RITLShakeCycleScrollView.m */,
-			);
-			path = ShakeCycleScrollView;
-			sourceTree = "<group>";
-		};
-		DBD8F91D200CEED700F33364 /* PageControl */ = {
-			isa = PBXGroup;
-			children = (
-				DBD8F91E200CEED700F33364 /* RITLShakePageControl.h */,
-				DBD8F91F200CEED700F33364 /* RITLShakePageControl.m */,
-			);
-			path = PageControl;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -229,11 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCBB915219167340093CCDB /* RITLShakePageControl.m in Sources */,
+				DBCBB909219164C70093CCDB /* RITLSDCycleScrollViewActionManager.swift in Sources */,
 				DBD8F8FA200CEDBE00F33364 /* ViewController.m in Sources */,
+				DBCBB914219167340093CCDB /* RITLShakeCycleScrollView.m in Sources */,
 				DBD8F905200CEDBE00F33364 /* main.m in Sources */,
-				DBD8F924200CEED700F33364 /* RITLShakeCycleScrollView.m in Sources */,
 				DBD8F922200CEED700F33364 /* RITLSDCycleScrollView.m in Sources */,
-				DBD8F923200CEED700F33364 /* RITLShakePageControl.m in Sources */,
 				DBD8F8F7200CEDBE00F33364 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +381,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLSDCycleScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RITLSDCycleView/RITLSDCycleScrollView-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -390,6 +398,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yue.RITLSDCycleScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RITLSDCycleView/RITLSDCycleScrollView-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
