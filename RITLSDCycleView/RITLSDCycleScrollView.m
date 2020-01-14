@@ -18,11 +18,13 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
 @optional
 
 @property (nonatomic, assign) NSInteger totalItemsCount;
+@property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
 
 - (int)currentIndex;
 
 - (void)setupTimer;
 - (void)invalidateTimer;
+- (void)setupPageControl;
 
 - (void)scrollToIndex:(int)targetIndex;
 - (int)pageControlIndexWithCurrentCellIndex:(NSInteger)index;
@@ -46,7 +48,12 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
 {
     if (self = [super initWithFrame:frame]) {
         
+        self.scrollable = true;
         self.customSize = CGSizeZero;
+        self.flowLayout.sectionInset = UIEdgeInsetsZero;
+        self.flowLayout.minimumInteritemSpacing = CGFLOAT_MIN;
+        self.flowLayout.minimumLineSpacing = CGFLOAT_MIN;
+        self.usePageControl = true;
         self.pageControlMarginBottom = RITLSDCycleScrollViewPageSpaceDefault;
         self.pageControlMarginRight = RITLSDCycleScrollViewPageSpaceDefault;
     }
@@ -68,46 +75,25 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
         
         // 注册cell
         if ([self.dataSource respondsToSelector:@selector(cycleViewCustomCollectionViewCellClass:)]) {
-            
             class = [self.dataSource cycleViewCustomCollectionViewCellClass:self];
-            
-        }/*else {
-            
-            class = [self.dataSource customCollectionViewCellClassForCycleScrollView];
-        }*/
-        
-        [self.mainView registerClass:class forCellWithReuseIdentifier:NSStringFromClass(class)];
-    }
-    
-    if ([dataSource respondsToSelector:@selector(cycleScollViewcustomCollectionViewLayout:)]) {
-        
-        UICollectionViewLayout *layout = [self.dataSource cycleScollViewcustomCollectionViewLayout:self];
-        
-        self.mainView.collectionViewLayout = layout;
-        
-        if ([layout isKindOfClass:UICollectionViewFlowLayout.class]) {
-            
-            self.customSize = ((UICollectionViewFlowLayout *)layout).itemSize;
+            [self.mainView registerClass:class forCellWithReuseIdentifier:NSStringFromClass(class)];
         }
-    }
-    
-//    /****** 不建议使用的方法 ******/
-//    else if ([dataSource respondsToSelector:@selector(customCollectionViewLayoutForCycleScollView)]) {
-//
-//        UICollectionViewLayout *layout = [self.dataSource customCollectionViewLayoutForCycleScollView];
-//
-//        self.mainView.collectionViewLayout = layout;
-//
-//        if ([layout isKindOfClass:UICollectionViewFlowLayout.class]) {
-//
-//            self.customSize = ((UICollectionViewFlowLayout *)layout).itemSize;
-//        }
-//    }
-//    /************/
-    
-    if ([dataSource respondsToSelector:@selector(cycleViewCustomCollectionViewScrollPosition:)]) {
         
-        self.position = [self.dataSource cycleViewCustomCollectionViewScrollPosition:self];
+        if ([dataSource respondsToSelector:@selector(cycleScollViewcustomCollectionViewLayout:)]) {
+            
+            UICollectionViewLayout *layout = [self.dataSource cycleScollViewcustomCollectionViewLayout:self];
+            //如果是flowLayout
+            self.mainView.collectionViewLayout = layout;
+            
+            if ([layout isKindOfClass:UICollectionViewFlowLayout.class]) {
+                self.flowLayout = (UICollectionViewFlowLayout *)layout;
+                self.customSize = ((UICollectionViewFlowLayout *)layout).itemSize;
+            }
+        }
+        
+        if ([dataSource respondsToSelector:@selector(cycleViewCustomCollectionViewScrollPosition:)]) {
+            self.position = [self.dataSource cycleViewCustomCollectionViewScrollPosition:self];
+        }
     }
 }
 
@@ -123,21 +109,23 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.dataSource) {
-        
         return [super collectionView:collectionView cellForItemAtIndexPath:indexPath];
     }
     
-    Class <RITLSDCycleScrollViewCell> cellClass = [self cycleViewCustomCollectionViewCellClass];
+ 
+    UICollectionViewCell <RITLSDCycleScrollViewCell> *cell = nil;
     
+    NSInteger item = self.infiniteLoop ? [self pageControlIndexWithCurrentCellIndex:indexPath.item] : indexPath.item;
     
-    UICollectionViewCell <RITLSDCycleScrollViewCell> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
-    
-     NSInteger item = self.infiniteLoop ? [self pageControlIndexWithCurrentCellIndex:indexPath.item] : indexPath.item;
-    
-    //进行回调
-    if ([self.dataSource respondsToSelector:@selector(cycleView:setupCustomCell:forIndex:)]) {
+    if (self.hasCycleViewAllRegisterCellClasses) {
         
-        [self.dataSource cycleView:self setupCustomCell:cell forIndex:[NSIndexPath indexPathForItem:item inSection:0]];
+        NSString *identifier = [self.dataSource cycleViewIdentifer:self atIndexPath:[NSIndexPath indexPathForItem:item inSection:0]] ;
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+        
+    }else {
+        
+        Class cellClass = [self cycleViewCustomCollectionViewCellClass];
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
     }
     
     NSString *imagePath = self.imagePathsGroup[item];
@@ -154,6 +142,11 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
         }
     } else if (!self.onlyDisplayText && [imagePath isKindOfClass:[UIImage class]]) {
         cell.imageView.image = (UIImage *)imagePath;
+    }
+    
+    //进行回调
+    if ([self.dataSource respondsToSelector:@selector(cycleView:setupCustomCell:forIndex:)]) {
+        [self.dataSource cycleView:self setupCustomCell:cell forIndex:[NSIndexPath indexPathForItem:item inSection:0]];
     }
     
     return cell;
@@ -184,38 +177,61 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
 }
 
 
-
 - (void)setImagePathsGroup:(NSArray *)imagePathsGroup
 {
     if (!self.dataSource) {
-        
         [super setImagePathsGroup:imagePathsGroup]; return;
     }
     
-    Class <RITLSDCycleScrollViewCell> cellClass = [self cycleViewCustomCollectionViewCellClass];
-    
-    //进行注册
-    [self.mainView registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];
+    // 进行注册
+    if (self.hasCycleViewAllRegisterCellClasses) {
+        // 所有注册的样式
+        NSDictionary <NSString *, Class> *allRegisterCellClasses = [self.dataSource cycleViewAllRegisterCellClasses:self];
+        //注册
+        for (NSString *key in allRegisterCellClasses.allKeys) {
+            [self.mainView registerClass:allRegisterCellClasses[key] forCellWithReuseIdentifier:key];
+        }
+    }else {
+        Class cellClass = [self cycleViewCustomCollectionViewCellClass];
+        [self.mainView registerClass:cellClass forCellWithReuseIdentifier:NSStringFromClass(cellClass)];//进行注册
+    }
     
     [super setImagePathsGroup:imagePathsGroup];
+    
+    if (imagePathsGroup.count > 1 && !self.scrollable) { //只有当大于1个并且不允许手动滚动的时候才会设置
+        self.contentView.scrollEnabled = self.scrollable;
+    }
+}
 
+
+/// 是否存在 cycleViewAllRegisterCellClasses 方法
+- (BOOL)hasCycleViewAllRegisterCellClasses {
+    
+    return [self.dataSource respondsToSelector:@selector(cycleViewAllRegisterCellClasses:)] && [self.dataSource cycleViewAllRegisterCellClasses:self] && [self.dataSource respondsToSelector:@selector(cycleViewIdentifer:atIndexPath:)];
 }
 
 
 - (void)layoutSubviews
 {
+    //记录原始itemSize
     [super layoutSubviews];
+
     [self updateMargin];
     [self updateCustomSize];
 }
+
+
+- (void)setupPageControl {}
 
 
 /// 优化当前索引
 - (NSInteger)currentIndex
 {
     if ([self.dataSource respondsToSelector:@selector(cycleView:currentIndexWithContentOffset:)]) {
-
-        return [self.dataSource cycleView:self currentIndexWithContentOffset:self.mainView.contentOffset];
+        
+        NSInteger index =  [self.dataSource cycleView:self currentIndexWithContentOffset:self.mainView.contentOffset];
+        
+        return index < 0 ? [super currentIndex] : index;
     }
 
     return  [super currentIndex];
@@ -241,30 +257,28 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
     if (self.pageControl.hidden || !self.showPageControl) { return; }
     
     if (self.pageControlMarginRight != RITLSDCycleScrollViewPageSpaceDefault) {
-        
         self.pageControl.ritl_originX = self.ritl_width - self.pageControlMarginRight - self.pageControl.ritl_width;
     }
     
     if (self.pageControlMarginBottom != RITLSDCycleScrollViewPageSpaceDefault) {
-        
         self.pageControl.ritl_originY = self.ritl_height - self.pageControlMarginBottom - self.pageControl.ritl_height;
     }
-
 }
 
 
 - (void)updateCustomSize
 {
-    if (![self.dataSource respondsToSelector:@selector(cycleViewShouldResetCollectionWithCustomScrollPosition:)]) { return; }
-    
-    if ([self.mainView.collectionViewLayout isKindOfClass:UICollectionViewFlowLayout.class]) {
-
-        ((UICollectionViewFlowLayout *)self.mainView.collectionViewLayout).itemSize = self.customSize;
-        [self updateCustomInitContentOffSet];
+    //如果存在自定义的flowLayout
+    if ([self.dataSource respondsToSelector:@selector(cycleScollViewcustomCollectionViewLayout:)]) {
+        if ([self.mainView.collectionViewLayout isKindOfClass:UICollectionViewFlowLayout.class]) {
+            ((UICollectionViewFlowLayout *)self.mainView.collectionViewLayout).itemSize = self.customSize;
+        }
     }
-
-
+    
+    if (![self.dataSource respondsToSelector:@selector(cycleViewShouldResetCollectionWithCustomScrollPosition:)]) { return; }
+    [self updateCustomInitContentOffSet];
 }
+
 
 - (void)updateCustomInitContentOffSet
 {
@@ -288,11 +302,10 @@ CGFloat RITLSDCycleScrollViewPageSpaceDefault = -1000000;
 
 #pragma mark - Tool - 用以适配即将废弃的方法
 
-- (Class <RITLSDCycleScrollViewCell>)cycleViewCustomCollectionViewCellClass
+- (Class)cycleViewCustomCollectionViewCellClass
 {
     return [self.dataSource cycleViewCustomCollectionViewCellClass:self];
 }
-
 
 
 @end
